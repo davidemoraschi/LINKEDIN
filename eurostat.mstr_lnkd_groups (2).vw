@@ -1,0 +1,20 @@
+DROP VIEW MSTR_LNKD_GROUPS;
+
+/* Formatted on 10/08/2012 10:58:00 (QP5 v5.139.911.3011) */
+CREATE OR REPLACE FORCE VIEW MSTR_LNKD_GROUPS
+(
+   GROUP_ID,
+   GROUP_NAME,
+   GROUP_CATEGORY,
+   GROUP_MEMBERSHIP_STATE,
+   GROUP_LOGO_URL,
+   GROUP_SITE_URL
+)
+AS
+   SELECT "ID",
+          "GROUP_NAME",
+          "CATEGORY",
+          "MEMBERSHIP_STATE",
+          "LOGO_URL",
+          "GROUP_URL"
+     FROM TABLE (mstr_lnkd_FFSQL.groups_table (SYS_CONTEXT ('eurostat_context', 'user')));

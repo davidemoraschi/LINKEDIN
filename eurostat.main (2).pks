@@ -1,0 +1,11 @@
+DROP PACKAGE MAIN;
+
+CREATE OR REPLACE PACKAGE          main
+AS
+   PROCEDURE jsp;
+
+   PROCEDURE frame_001;
+
+   PROCEDURE frame_002;
+END main;
+/
